@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
         <title>Flask Website</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <style>
-            h1 {
-                font-size: 60px;
-                font-family: Roboto;
-                font-weight: normal;
-                color: rgb(100,100,100);
-                text-align: center
-            }
             #banner{
-                width: 100%;
                 height: 360px;
-                object-fit: cover;
-            }
-             h2 {
-                font-size: 32px;
-                font-family: Roboto;
-                font-weight: normal;
-                color: rgb(100,100,100);
-                text-align: center
-            }
-            .bodytext{
-                font-family: Roboto;
-                color: rgb(80,80,80);
-            }
-            #container{
-                max-width: 720px;
-                margin: 0 auto 0 auto;
+                width: 100%
             }
         </style>
     </head>
     <body>
-        <div id = "container">
-            <h1>Jovian Careers</h1>
-        <img id="banner" src="http://127.0.0.1:5000/static/coverImage.jpeg"
+        <div class = "container">
+            <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+        <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/coverImage.jpeg"
         height="320">
-        <h2>About Jovian</h2>
-        <p class="bodytext">
+        <h2 class="text-center">About Jovian</h2>
+        <p class = "lead">
             Welcome to Jovian Careers, your ultimate destination for exploring and securing your dream career. At Jovian Careers, we understand that finding the right job can be a transformative experience, shaping your professional journey and personal fulfillment. Our mission is to empower job seekers by providing a comprehensive platform that connects talented individuals with top-tier employers across various industries. Through our user-friendly interface and advanced job-matching algorithms, we strive to streamline the job search process, ensuring a seamless and efficient experience for both candidates and companies. Whether you're a recent graduate, a seasoned professional, or looking to make a career change, Jovian Careers is here to support and guide you every step of the way. Join us today and unlock a world of opportunities tailored to your unique talents and aspirations.
         </p>
-        <h2>Open Positions</h2>
-        <p class="bodytext">ToDo show jobs here</p>
-            <div style="text-align:center;">
-                <button>Contact Us</button>
+        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        <div>
+            <div>
+                {% for job in jobs %}
+                    {% include "jobitem.html" %}
+                {% endfor %}
+            </div>
+        </div>
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg">Contact Us</button>
                 <p>copyright jovian</p>
             </div>
         </div>
