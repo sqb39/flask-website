@@ -8,19 +8,29 @@
         <style>
             #banner{
                 height: 360px;
-                width: 100%
+                width: 100%;
+                margin-bottom: 16px
             }
         </style>
     </head>
+
     <body>
-        <div class = "container">
-            <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+        {% include "nav.html" %}
         <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/coverImage.jpeg"
         height="320">
-        <h2 class="text-center">About Jovian</h2>
-        <p class = "lead">
+        <div class = "container">
+            <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+
+        <div class="row" style="margin-bottom:16px">
+            <div class="col-md-6">
+            <p class = "lead">
             Welcome to Jovian Careers, your ultimate destination for exploring and securing your dream career. At Jovian Careers, we understand that finding the right job can be a transformative experience, shaping your professional journey and personal fulfillment. Our mission is to empower job seekers by providing a comprehensive platform that connects talented individuals with top-tier employers across various industries. Through our user-friendly interface and advanced job-matching algorithms, we strive to streamline the job search process, ensuring a seamless and efficient experience for both candidates and companies. Whether you're a recent graduate, a seasoned professional, or looking to make a career change, Jovian Careers is here to support and guide you every step of the way. Join us today and unlock a world of opportunities tailored to your unique talents and aspirations.
-        </p>
+            </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+            <img src="/static/people.jpeg " style="height: 320px; border-radius:4px">
+            </div>
+        </div>
         <h2 class="text-center mt-2 mb-4">Open Positions</h2>
         <div>
             <div>
@@ -30,9 +40,9 @@
             </div>
         </div>
             <div class="text-center">
-                <button class="btn btn-primary btn-lg">Contact Us</button>
-                <p>copyright jovian</p>
+                <a href="mailto:md.nazmus.saqib39@gmail.com?subject=Question%20about%20Job%20opening&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20question%3A%20%3Cyour%20question%20here%3E%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
             </div>
         </div>
+        {% include "footer.html" %}
     </body>
 </html>
